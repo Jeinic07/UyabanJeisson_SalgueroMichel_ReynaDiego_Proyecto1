@@ -11,7 +11,7 @@ public class Sonido {
 	URL soundURL[] = new URL[30];
 	
 	public Sonido() {
-		soundURL[0] = getClass().getResource("/Musica/MusicaFondo.wav");
+		soundURL[0] = getClass().getResource("/Musica/automovil.wav");
 
 	}
 	public void setFile(int i) {
