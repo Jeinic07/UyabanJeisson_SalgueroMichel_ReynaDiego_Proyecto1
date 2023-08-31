@@ -7,15 +7,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class MenuVista extends JFrame {
 
 	private JButton btnIngresarCarro, btnBorrarCarro, btnActualizarCarro;
 	private JLabel fondoInicio;
 	private Sonido sound;
+	private PanelPrincipal pp;
 
 	public MenuVista() {
-
+		
+		pp = new PanelPrincipal();
 		sound = new Sonido();
 
 		setTitle("Parqueadero Titán");
@@ -24,58 +27,13 @@ public class MenuVista extends JFrame {
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-
-		fondoInicio = new JLabel();
-		fondoInicio.setBounds(0, 0, 1005, 646);
-		fondoInicio.setIcon(new ImageIcon("src/Imagenes/FondoEntrada.png"));
-
+		
 		playMusica(0);
-
-		btnIngresarCarro = new JButton("");
-		btnIngresarCarro.setBounds(170, 135, 200, 50);
-		btnIngresarCarro.setOpaque(false);
-		btnIngresarCarro.setBorderPainted(false);
-		btnIngresarCarro.setBackground(Color.red);
-		btnIngresarCarro.setForeground(Color.WHITE);
-		btnIngresarCarro.setIcon(null);
-
-		btnBorrarCarro = new JButton("");
-		btnBorrarCarro.setBounds(405, 135, 200, 50);
-		btnBorrarCarro.setOpaque(false);
-		btnBorrarCarro.setBorderPainted(false);
-		btnBorrarCarro.setBackground(Color.red);
-		btnBorrarCarro.setForeground(Color.orange);
-		btnBorrarCarro.setIcon(null);
-
-		btnActualizarCarro = new JButton("");
-		btnActualizarCarro.setBounds(640, 135, 200, 50);
-		btnActualizarCarro.setOpaque(false);
-		btnActualizarCarro.setBorderPainted(false);
-		btnActualizarCarro.setBackground(Color.red);
-		btnActualizarCarro.setForeground(Color.WHITE);
-		btnActualizarCarro.setIcon(null);
-
-		add(btnActualizarCarro);
-		add(btnBorrarCarro);
-		add(btnIngresarCarro);
-		add(fondoInicio);
+		
+		add(pp);
 		setVisible(true);
-	}
-
-	public JLabel getFondoInicio() {
-		return fondoInicio;
-	}
-
-	public void setFondoInicio(JLabel fondoInicio) {
-		this.fondoInicio = fondoInicio;
-	}
-
-	public Sonido getSound() {
-		return sound;
-	}
-
-	public void setSound(Sonido sound) {
-		this.sound = sound;
+		
+		
 	}
 
 	public JButton getBtnIngresarCarro() {
@@ -102,6 +60,30 @@ public class MenuVista extends JFrame {
 		this.btnActualizarCarro = btnActualizarCarro;
 	}
 
+	public JLabel getFondoInicio() {
+		return fondoInicio;
+	}
+
+	public void setFondoInicio(JLabel fondoInicio) {
+		this.fondoInicio = fondoInicio;
+	}
+
+	public Sonido getSound() {
+		return sound;
+	}
+
+	public void setSound(Sonido sound) {
+		this.sound = sound;
+	}
+
+	public PanelPrincipal getPp() {
+		return pp;
+	}
+
+	public void setPp(PanelPrincipal pp) {
+		this.pp = pp;
+	}
+	
 	public void setupGame() {
 		playMusica(0);
 	}
@@ -122,5 +104,5 @@ public class MenuVista extends JFrame {
 		sound.play();
 
 	}
-
+	
 }

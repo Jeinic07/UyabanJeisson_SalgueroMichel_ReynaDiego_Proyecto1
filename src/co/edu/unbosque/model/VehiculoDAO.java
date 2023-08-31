@@ -9,7 +9,6 @@ public class VehiculoDAO implements OperacionesDAO {
 	private MyLinkedList<VehiculoDTO> vehiculos;
 
 	public VehiculoDAO() {
-
 		try {
 			vehiculos = (MyLinkedList<VehiculoDTO>) Serializacion.readSerializable("Vehiculo.txt");
 		} catch (Exception e) {
