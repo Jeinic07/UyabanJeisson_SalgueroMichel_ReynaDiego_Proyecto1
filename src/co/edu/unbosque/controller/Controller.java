@@ -1,5 +1,7 @@
 package co.edu.unbosque.controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -7,25 +9,63 @@ import co.edu.unbosque.model.MyLinkedList;
 import co.edu.unbosque.model.VehiculoDAO;
 import co.edu.unbosque.model.VehiculoDTO;
 import co.edu.unbosque.persistance.Serializacion;
+import co.edu.unbosque.view.MenuVista;
 
-public class Controller {
+public class Controller implements ActionListener{
 
 	private VehiculoDAO v;
 	private VehiculoDTO vdto;
 	private Scanner sc;
 	private Serializacion s; 
+	private MenuVista mv;
 
 	public Controller() {
 		vdto = new VehiculoDTO(); 
 		v = new VehiculoDAO();
 		sc = new Scanner(System.in);
+		mv = new MenuVista();
+		agregarLectores();
+	}
+	
+private void agregarLectores() {
+		
+		mv.getBtnActualizarCarro().addActionListener(this);
+		mv.getBtnActualizarCarro().setActionCommand("Actualizar");
+		
+		mv.getBtnBorrarCarro().addActionListener(this);
+		mv.getBtnBorrarCarro().setActionCommand("Borrar");
+		
+		mv.getBtnIngresarCarro().addActionListener(this);
+		mv.getBtnIngresarCarro().setActionCommand("Ingresar");
+		
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		switch (e.getActionCommand()) {
+		case "Agregar":{
+			
+
+			break;
+		}
+		case "Actualizar":{
+			
+			break;
+		}
+		case "Borrar":{
+			
+			break;
+		}
+
+		default:
+			break;
+		}
 	}
 	
 	public void run() {
 		
 		ciclo1: while(true) {
 			
-			System.out.println("hola");
+			
 			System.out.println("__________________________________________");
 			System.out.println("");
 			System.out.println("SISTEMA DE ALMACENAMIENTO DE VEHICULOS ");
