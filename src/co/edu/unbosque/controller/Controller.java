@@ -66,7 +66,8 @@ public class Controller implements ActionListener {
 		}
 
 		case "Agregar": {
-
+			
+			
 			String tipo = mv.getPa().getIngreseTipo().getText();
 			String placa = mv.getPa().getIngreseNdePlaca().getText();
 			String hEntrada = mv.getPa().getIngreseHora().getText();
@@ -116,80 +117,80 @@ public class Controller implements ActionListener {
 		String command = e.getActionCommand();
 		System.out.println(command);
 	}
-
-	public void run() {
-
-		ciclo1: while (true) {
-
-			System.out.println("__________________________________________");
-			System.out.println("");
-			System.out.println("SISTEMA DE ALMACENAMIENTO DE VEHICULOS ");
-			System.out.println("");
-			System.out.println("Que desea realizar?");
-			System.out.println("");
-			System.out.println("1. Ingresar un vehiculo.");
-			System.out.println("2. Eliminar un vehiculo.");
-			System.out.println("3. Mostrar un vehiculo.");
-			System.out.println("4. Mostrar todos los vehiculos.");
-			System.out.println("5. Salir.");
-			System.out.println("");
-			System.out.println("__________________________________________");
-
-			ciclo2: while (true) {
-
-				int op = sc.nextInt();
-				switch (op) {
-
-				case 1: {
-
-					System.out.println("Ingrese el tipo de vehiculo (camioneta, automovil, moto)");
-					sc.nextLine();
-					String tipo = sc.nextLine();
-
-					System.out.println("Ingrese la placa del vehiculo (AAA 000)");
-					String placa = sc.nextLine();
-
-					System.out.println("Ingrese la hora de ingreso (formato 24 horas -> 15 00)");
-					String horaEntrada = sc.nextLine();
-
-					System.out.println(v.ingresar(tipo, placa, horaEntrada));
-					break ciclo2;
-				}
-				case 2: {
-
-					System.out.println("Ingrese la poscicion del vehiculo que desa borrar");
-					int pos = sc.nextInt();
-
-					System.out.println(v.eliminar(pos));
-
-					break ciclo2;
-
-				}
-
-				case 3: {
-					sc.nextLine();
-					System.out.println("Ingrese la placa del vehiculo que desea ver (AAA 000)");
-					String placa = sc.nextLine();
-
-					System.out.println(v.mostrarVehiculo(placa));
-
-					break ciclo2;
-				}
-
-				case 4: {
-					System.out.println(v.mostrarTodo());
-
-					break ciclo2;
-				}
-
-				case 5: {
-
-					System.exit(0);
-				}
-				}
-
-			}
-
-		}
-	}
+//
+//	public void run() {
+//
+//		ciclo1: while (true) {
+//
+//			System.out.println("__________________________________________");
+//			System.out.println("");
+//			System.out.println("SISTEMA DE ALMACENAMIENTO DE VEHICULOS ");
+//			System.out.println("");
+//			System.out.println("Que desea realizar?");
+//			System.out.println("");
+//			System.out.println("1. Ingresar un vehiculo.");
+//			System.out.println("2. Eliminar un vehiculo.");
+//			System.out.println("3. Mostrar un vehiculo.");
+//			System.out.println("4. Mostrar todos los vehiculos.");
+//			System.out.println("5. Salir.");
+//			System.out.println("");
+//			System.out.println("__________________________________________");
+//
+//			ciclo2: while (true) {
+//
+//				int op = sc.nextInt();
+//				switch (op) {
+//
+//				case 1: {
+//
+//					System.out.println("Ingrese el tipo de vehiculo (camioneta, automovil, moto)");
+//					sc.nextLine();
+//					String tipo = sc.nextLine();
+//
+//					System.out.println("Ingrese la placa del vehiculo (AAA 000)");
+//					String placa = sc.nextLine();
+//
+//					System.out.println("Ingrese la hora de ingreso (formato 24 horas -> 15 00)");
+//					String horaEntrada = sc.nextLine();
+//
+//					System.out.println(v.ingresar(tipo, placa, horaEntrada));
+//					break ciclo2;
+//				}
+//				case 2: {
+//
+//					System.out.println("Ingrese la poscicion del vehiculo que desa borrar");
+//					int pos = sc.nextInt();
+//
+//					System.out.println(v.eliminar(pos));
+//
+//					break ciclo2;
+//
+//				}
+//
+//				case 3: {
+//					sc.nextLine();
+//					System.out.println("Ingrese la placa del vehiculo que desea ver (AAA 000)");
+//					String placa = sc.nextLine();
+//
+//					System.out.println(v.mostrarVehiculo(placa));
+//
+//					break ciclo2;
+//				}
+//
+//				case 4: {
+//					System.out.println(v.mostrarTodo());
+//
+//					break ciclo2;
+//				}
+//
+//				case 5: {
+//
+//					System.exit(0);
+//				}
+//				}
+//
+//			}
+//
+//		}
+//	}
 }

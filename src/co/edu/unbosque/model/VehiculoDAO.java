@@ -10,7 +10,7 @@ public class VehiculoDAO implements OperacionesDAO {
 	private MyLinkedList<VehiculoDTO> vehiculos;
 
 	public VehiculoDAO() {
-// 		vehiculos = new MyLinkedList<VehiculoDTO>();
+//		vehiculos = new MyLinkedList<VehiculoDTO>();
 
 		try {
 			vehiculos = (MyLinkedList<VehiculoDTO>) Serializacion.readSerializable("Vehiculo.txt");
@@ -86,7 +86,7 @@ public class VehiculoDAO implements OperacionesDAO {
 
 		for (int i = 0; i < vehiculos.size(); i++) {
 
-			salida[i] = "posición " + count + "; "+ vehiculos.get(i).getInfo();
+			salida[i] = "Posición: " + count + "   "+ vehiculos.get(i).getInfo();
 			count++;
 		}
 
