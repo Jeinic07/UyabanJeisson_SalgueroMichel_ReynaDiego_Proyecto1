@@ -1,5 +1,9 @@
 package co.edu.unbosque.view;
 
-public class PanelMostrar {
+import javax.swing.JPanel;
 
+public class PanelMostrar extends JPanel{
+
+	
+	
 }

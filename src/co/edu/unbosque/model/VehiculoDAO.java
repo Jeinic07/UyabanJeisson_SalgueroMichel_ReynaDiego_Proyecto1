@@ -45,7 +45,8 @@ public class VehiculoDAO implements OperacionesDAO {
 
 	@Override
 	public String eliminar(String placa) {
-		// TODO Auto-generated method stub
+		
+		
 		return null;
 	}
 

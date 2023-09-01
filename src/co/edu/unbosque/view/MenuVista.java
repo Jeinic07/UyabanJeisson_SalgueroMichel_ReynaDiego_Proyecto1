@@ -15,7 +15,7 @@ public class MenuVista extends JFrame {
 	private JLabel fondoInicio;
 	private Sonido sound;
 	private PanelPrincipal pp;
-
+	
 	public MenuVista() {
 		
 		pp = new PanelPrincipal();
@@ -28,9 +28,11 @@ public class MenuVista extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-		playMusica(0);
+//		playMusica(0);
 		
+
 		add(pp);
+		
 		setVisible(true);
 		
 		
@@ -84,6 +86,8 @@ public class MenuVista extends JFrame {
 		this.pp = pp;
 	}
 	
+	
+
 	public void setupGame() {
 		playMusica(0);
 	}

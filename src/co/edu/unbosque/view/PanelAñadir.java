@@ -1,5 +1,16 @@
 package co.edu.unbosque.view;
 
-public class PanelAñadir {
+import javax.swing.JPanel;
 
+public class PanelAñadir extends JPanel {
+
+	public PanelAñadir() {
+		
+		this.setBounds(133, 236, 752, 309);
+		this.setLayout(null);
+		
+		this.setVisible(false);
+	
+	}
+	
 }

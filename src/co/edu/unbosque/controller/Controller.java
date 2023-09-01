@@ -32,28 +32,34 @@ public class Controller implements ActionListener {
 
 	private void agregarLectores() {
 
-		mv.getPp().getBtnActualizarCarro().addActionListener(this);
-		mv.getPp().getBtnActualizarCarro().setActionCommand("Actualizar");
+		mv.getPp().getBtnMostrarVehiculo().addActionListener(this);
+		mv.getPp().getBtnMostrarVehiculo().setActionCommand("Mostrar");
 
-		mv.getPp().getBtnBorrarCarro().addActionListener(this);
-		mv.getPp().getBtnBorrarCarro().setActionCommand("Borrar");
+		mv.getPp().getBtnEliminarVehiculo().addActionListener(this);
+		mv.getPp().getBtnEliminarVehiculo().setActionCommand("Eliminar");
 
-		mv.getPp().getBtnIngresarCarro().addActionListener(this);
-		mv.getPp().getBtnIngresarCarro().setActionCommand("Ingresar");
+		mv.getPp().getBtnIngresarVehiculo().addActionListener(this);
+		mv.getPp().getBtnIngresarVehiculo().setActionCommand("Ingresar");
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
 		case "Agregar": {
+			
+			mv.getPp().getPa().setVisible(true);
 
 			break;
 		}
-		case "Actualizar": {
+		case "Mostrar": {
+			mv.getPp().getPa().setVisible(false);
+
+			
 
 			break;
 		}
 		case "Borrar": {
+			mv.getPp().getPa().setVisible(false);
 
 			break;
 		}
@@ -61,6 +67,8 @@ public class Controller implements ActionListener {
 		default:
 			break;
 		}
+		String command = e.getActionCommand();
+		System.out.println(command);
 	}
 
 	public void run() {

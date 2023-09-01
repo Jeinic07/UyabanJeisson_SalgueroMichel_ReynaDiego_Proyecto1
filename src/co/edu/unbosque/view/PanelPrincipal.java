@@ -9,12 +9,15 @@ import javax.swing.JPanel;
 
 public class PanelPrincipal extends JPanel {
 
-	private JButton btnIngresarCarro, btnBorrarCarro, btnActualizarCarro;
+	private JButton btnIngresarVehiculo, btnEliminarVehiculo, btnMostrarVehiculo;
 	private JLabel fondoInicio;
 	private Sonido sound;
+	private PanelAñadir pa;
+
 
 	public PanelPrincipal() {
 
+		pa = new PanelAñadir();
 		setBounds(0, 0, 1005, 646);
 		setLayout(null);
 
@@ -22,36 +25,37 @@ public class PanelPrincipal extends JPanel {
 		fondoInicio.setBounds(0, 0, 1005, 646);
 		fondoInicio.setIcon(new ImageIcon("src/Imagenes/FondoEntrada.jpg"));
 
-		btnIngresarCarro = new JButton("Agregar vehiculo");
-		btnIngresarCarro.setBounds(170, 135, 200, 50);
-		btnIngresarCarro.setOpaque(false);
-		btnIngresarCarro.setBorderPainted(false);
-		btnIngresarCarro.setBackground(Color.red);
-		btnIngresarCarro.setForeground(Color.black);
-		btnIngresarCarro.setIcon(null);
-		btnIngresarCarro.setFocusable(false);
+		btnIngresarVehiculo = new JButton("Agregar vehiculo");
+		btnIngresarVehiculo.setBounds(170, 135, 200, 50);
+		btnIngresarVehiculo.setOpaque(false);
+		btnIngresarVehiculo.setBorderPainted(false);
+		btnIngresarVehiculo.setBackground(Color.red);
+		btnIngresarVehiculo.setForeground(Color.black);
+		btnIngresarVehiculo.setIcon(null);
+		btnIngresarVehiculo.setFocusable(false);
 
-		btnBorrarCarro = new JButton("Eliminar Vehiculos");
-		btnBorrarCarro.setBounds(405, 135, 200, 50);
-		btnBorrarCarro.setOpaque(false);
-		btnBorrarCarro.setBorderPainted(false);
-		btnBorrarCarro.setBackground(Color.red);
-		btnBorrarCarro.setForeground(Color.black);
-		btnBorrarCarro.setIcon(null);
-		btnBorrarCarro.setFocusable(false);
+		btnEliminarVehiculo = new JButton("Eliminar Vehiculos");
+		btnEliminarVehiculo.setBounds(405, 135, 200, 50);
+		btnEliminarVehiculo.setOpaque(false);
+		btnEliminarVehiculo.setBorderPainted(false);
+		btnEliminarVehiculo.setBackground(Color.red);
+		btnEliminarVehiculo.setForeground(Color.black);
+		btnEliminarVehiculo.setIcon(null);
+		btnEliminarVehiculo.setFocusable(false);
 
-		btnActualizarCarro = new JButton("Mostrar vehiculo");
-		btnActualizarCarro.setBounds(640, 135, 200, 50);
-		btnActualizarCarro.setOpaque(false);
-		btnActualizarCarro.setBorderPainted(false);
-		btnActualizarCarro.setBackground(Color.red);
-		btnActualizarCarro.setForeground(Color.black);
-		btnActualizarCarro.setIcon(null);
-		btnActualizarCarro.setFocusable(false);
+		btnMostrarVehiculo = new JButton("Mostrar vehiculo");
+		btnMostrarVehiculo.setBounds(640, 135, 200, 50);
+		btnMostrarVehiculo.setOpaque(false);
+		btnMostrarVehiculo.setBorderPainted(false);
+		btnMostrarVehiculo.setBackground(Color.red);
+		btnMostrarVehiculo.setForeground(Color.black);
+		btnMostrarVehiculo.setIcon(null);
+		btnMostrarVehiculo.setFocusable(false);
 
-		add(btnActualizarCarro);
-		add(btnBorrarCarro);
-		add(btnIngresarCarro);
+		add(pa);
+		add(btnMostrarVehiculo);
+		add(btnEliminarVehiculo);
+		add(btnIngresarVehiculo);
 		add(fondoInicio);
 		setVisible(true);
 	}
@@ -72,28 +76,38 @@ public class PanelPrincipal extends JPanel {
 		this.sound = sound;
 	}
 
-	public JButton getBtnIngresarCarro() {
-		return btnIngresarCarro;
+	public JButton getBtnIngresarVehiculo() {
+		return btnIngresarVehiculo;
 	}
 
-	public void setBtnIngresarCarro(JButton btnIngresarCarro) {
-		this.btnIngresarCarro = btnIngresarCarro;
+	public void setBtnIngresarVehiculo(JButton btnIngresarVehiculo) {
+		this.btnIngresarVehiculo = btnIngresarVehiculo;
 	}
 
-	public JButton getBtnBorrarCarro() {
-		return btnBorrarCarro;
+	public JButton getBtnEliminarVehiculo() {
+		return btnEliminarVehiculo;
 	}
 
-	public void setBtnBorrarCarro(JButton btnBorrarCarro) {
-		this.btnBorrarCarro = btnBorrarCarro;
+	public void setBtnEliminarVehiculo(JButton btnEliminarVehiculo) {
+		this.btnEliminarVehiculo = btnEliminarVehiculo;
 	}
 
-	public JButton getBtnActualizarCarro() {
-		return btnActualizarCarro;
+	public JButton getBtnMostrarVehiculo() {
+		return btnMostrarVehiculo;
 	}
 
-	public void setBtnActualizarCarro(JButton btnActualizarCarro) {
-		this.btnActualizarCarro = btnActualizarCarro;
+	public void setBtnMostrarVehiculo(JButton btnMostrarVehiculo) {
+		this.btnMostrarVehiculo = btnMostrarVehiculo;
 	}
 
+	public PanelAñadir getPa() {
+		return pa;
+	}
+
+	public void setPa(PanelAñadir pa) {
+		this.pa = pa;
+	}
+	
+
+	
 }
