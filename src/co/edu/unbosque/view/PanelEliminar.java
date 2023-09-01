@@ -8,15 +8,11 @@ public class PanelEliminar extends JPanel{
 	JLabel texto;
 	
 	public PanelEliminar() {
-		setBounds(133, 236, 752, 309);
+		setBounds(362, 233, 283, 278);
 		setLayout(null);
 		
-		texto = new JLabel();
-		texto.setText("Eliminar");
-		texto.setBounds(365, 136, 343, 32);
 		
-		
-		add(texto);
+
 		
 		setVisible(false);
 		

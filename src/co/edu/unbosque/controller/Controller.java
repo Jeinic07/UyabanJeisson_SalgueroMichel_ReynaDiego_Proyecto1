@@ -48,8 +48,6 @@ public class Controller implements ActionListener {
 		mv.getBtnPrueba().addActionListener(this);
 		mv.getBtnPrueba().setActionCommand("Prueba");
 		
-		mv.getPa().getBtnConfirmar1().addActionListener(this);
-		mv.getPa().getBtnConfirmar1().setActionCommand("Confirmar1");
 
 	}
 
@@ -63,12 +61,7 @@ public class Controller implements ActionListener {
 			mv.getPe().setVisible(false);
 			break;
 		} 
-		case "Confirmar1":{
-			
-			
-			break;
-		}
-		
+	
 		case "Prueba":{
 			System.out.println("hpta");
 			break;
@@ -76,11 +69,12 @@ public class Controller implements ActionListener {
 		case "Agregar":{
 			
 		
-			String tipo = pa.getIngreseTipo().getText();
-			pa.getIngreseTipo().setText(tipo);		
+			String tipo = mv.getPa().getIngreseTipo().getText();	
+			String placa = mv.getPa().getIngreseNdePlaca().getText();
+			String hEntrada = mv.getPa().getIngreseHora().getText();
 			
-			String placa = pa.getIngreseNdePlaca().getText();
-			System.out.println("tipo"+ tipo);
+			System.out.println(v.ingresar(tipo, placa, hEntrada)); 
+			
 			break;
 		}
 

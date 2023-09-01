@@ -10,7 +10,7 @@ public class VehiculoDAO implements OperacionesDAO {
 	private MyLinkedList<VehiculoDTO> vehiculos;
 
 	public VehiculoDAO() {
-//		vehiculos = new MyLinkedList<VehiculoDTO>();
+// 		vehiculos = new MyLinkedList<VehiculoDTO>();
 
 		try {
 			vehiculos = (MyLinkedList<VehiculoDTO>) Serializacion.readSerializable("Vehiculo.txt");

@@ -12,7 +12,7 @@ public class PanelAñadir extends JPanel {
 
 	private JLabel texto, textoPlaca, textoHora, textoTipo;
 	private JTextField ingreseNdePlaca, ingreseTipo, ingreseHora;
-	private JButton btnAgregar, btnConfirmar1;
+	private JButton btnAgregar;
 	
 	public PanelAñadir() {
 		
@@ -61,18 +61,8 @@ public class PanelAñadir extends JPanel {
 		btnAgregar.setBackground(Color.LIGHT_GRAY);
 		btnAgregar.setForeground(Color.DARK_GRAY);
 		btnAgregar.setIcon(null);
+	
 		
-		btnConfirmar1 = new JButton("confirmar");
-		btnConfirmar1.setBounds(511, 35, 127, 32);
-		btnConfirmar1.setOpaque(false);
-		btnConfirmar1.setBorderPainted(false);
-		btnConfirmar1.setFont(new Font("Times New Roman", Font.TRUETYPE_FONT, 14));
-		btnConfirmar1.setBackground(Color.LIGHT_GRAY);
-		btnConfirmar1.setForeground(Color.DARK_GRAY);
-		btnConfirmar1.setIcon(null);
-		
-		
-		add(btnConfirmar1);
 		add(btnAgregar);
 		add(ingreseHora);
 		add(textoHora);
@@ -149,16 +139,7 @@ public class PanelAñadir extends JPanel {
 		this.btnAgregar = btnAgregrar;
 	}
 
-	public JButton getBtnConfirmar1() {
-		return btnConfirmar1;
-	}
 
-	public void setBtnConfirmar1(JButton btnConfirmar1) {
-		this.btnConfirmar1 = btnConfirmar1;
-	}
-
-	
-	
 	
 	
 }
