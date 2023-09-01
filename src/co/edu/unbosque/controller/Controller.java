@@ -22,8 +22,7 @@ public class Controller implements ActionListener {
 	private Serializacion s;
 	private MenuVista mv;
 	private PanelAñadir pa;
-	
-	
+
 	public Controller() {
 		vdto = new VehiculoDTO();
 		v = new VehiculoDAO();
@@ -43,32 +42,37 @@ public class Controller implements ActionListener {
 
 		mv.getBtnIngresarVehiculo().addActionListener(this);
 		mv.getBtnIngresarVehiculo().setActionCommand("Ingresar");
-		
-		pa.getBtnAgregrar().addActionListener(this);
-		pa.getBtnAgregrar().setActionCommand("Agregar");
 
+		pa.getBtnAgregar().addActionListener(this);
+		pa.getBtnAgregar().setActionCommand("Agregar");
+
+		pa.getBtnConfirmar1().addActionListener(this);
+		pa.getBtnConfirmar1().setActionCommand("Confirmar1");
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
-		case "Ingresar": 
-			
+		case "Ingresar": {
+
 			mv.getPa().setVisible(true);
 			mv.getPm().setVisible(false);
 			mv.getPe().setVisible(false);
+			break;
+		}
+		case "Confirmar1": {
 			
-			case "Agregar":{ 
-				String placa = pa.getIngreseNdePlaca().getText();
-				String tipo = pa.getIngreseTipo().getText();
-				String hEntrada = pa.getIngreseHora().getText();
-				
-				v.ingresar(tipo, placa, hEntrada);
-				break;
-			}
-			
-		
-			
-		
+			break;
+		}
+
+		case "Agregar": {
+			String placa = pa.getIngreseNdePlaca().getText();
+			String tipo = pa.getIngreseTipo().getText();
+			String hEntrada = pa.getIngreseHora().getText();
+
+			v.ingresar(tipo, placa, hEntrada);
+			break;
+		}
+
 		case "Mostrar": {
 			mv.getPa().setVisible(false);
 			mv.getPm().setVisible(true);
@@ -80,7 +84,7 @@ public class Controller implements ActionListener {
 			mv.getPa().setVisible(false);
 			mv.getPm().setVisible(false);
 			mv.getPe().setVisible(true);
-			
+
 			break;
 		}
 
@@ -130,12 +134,12 @@ public class Controller implements ActionListener {
 					break ciclo2;
 				}
 				case 2: {
-					
+
 					System.out.println("Ingrese la poscicion del vehiculo que desa borrar");
 					int pos = sc.nextInt();
-					
+
 					System.out.println(v.eliminar(pos));
-					
+
 					break ciclo2;
 
 				}

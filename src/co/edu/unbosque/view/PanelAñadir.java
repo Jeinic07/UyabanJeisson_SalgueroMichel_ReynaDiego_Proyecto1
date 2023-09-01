@@ -12,7 +12,7 @@ public class PanelAñadir extends JPanel {
 
 	private JLabel texto, textoPlaca, textoHora, textoTipo;
 	private JTextField ingreseNdePlaca, ingreseTipo, ingreseHora;
-	private JButton btnAgregrar;
+	private JButton btnAgregar, btnConfirmar1, btnConfirmar2, btnConfirmar3;
 	
 	public PanelAñadir() {
 		
@@ -53,21 +53,31 @@ public class PanelAñadir extends JPanel {
 		ingreseHora.setFont(new Font("Times New Roman", Font.BOLD, 24));
 		ingreseHora.setBounds(400, 180, 100, 35);
 		
-		btnAgregrar = new JButton("Agregar");
-		btnAgregrar.setBounds(550, 100, 150, 100);
-		btnAgregrar.setOpaque(false);
-		btnAgregrar.setBorderPainted(false);
-		btnAgregrar.setFont(new Font("Times New Roman", Font.TRUETYPE_FONT, 24));
-		btnAgregrar.setBackground(Color.LIGHT_GRAY);
-		btnAgregrar.setForeground(Color.DARK_GRAY);
-		btnAgregrar.setIcon(null);
+		btnAgregar = new JButton("Agregar");
+		btnAgregar.setBounds(550, 100, 150, 100);
+		btnAgregar.setOpaque(false);
+		btnAgregar.setBorderPainted(false);
+		btnAgregar.setFont(new Font("Times New Roman", Font.TRUETYPE_FONT, 24));
+		btnAgregar.setBackground(Color.LIGHT_GRAY);
+		btnAgregar.setForeground(Color.DARK_GRAY);
+		btnAgregar.setIcon(null);
+		
+		btnConfirmar1 = new JButton("confirmar");
+		btnConfirmar1.setBounds(511, 35, 140, 32);
+		btnConfirmar1.setOpaque(false);
+		btnConfirmar1.setBorderPainted(false);
+		btnConfirmar1.setFont(new Font("Times New Roman", Font.TRUETYPE_FONT, 18));
+		btnConfirmar1.setBackground(Color.LIGHT_GRAY);
+		btnConfirmar1.setForeground(Color.DARK_GRAY);
+		btnConfirmar1.setIcon(null);
 		
 		
 		texto = new JLabel();
 		texto.setText("Añadir");
 		texto.setBounds(365, 136, 343, 32);
 		
-		add(btnAgregrar);
+		add(btnConfirmar1);
+		add(btnAgregar);
 		add(ingreseHora);
 		add(textoHora);
 		add(textoTipo);
@@ -135,13 +145,38 @@ public class PanelAñadir extends JPanel {
 		this.ingreseHora = ingreseHora;
 	}
 
-	public JButton getBtnAgregrar() {
-		return btnAgregrar;
+	public JButton getBtnAgregar() {
+		return btnAgregar;
 	}
 
-	public void setBtnAgregrar(JButton btnAgregrar) {
-		this.btnAgregrar = btnAgregrar;
+	public void setBtnAgregar(JButton btnAgregrar) {
+		this.btnAgregar = btnAgregrar;
 	}
+
+	public JButton getBtnConfirmar1() {
+		return btnConfirmar1;
+	}
+
+	public void setBtnConfirmar1(JButton btnConfirmar1) {
+		this.btnConfirmar1 = btnConfirmar1;
+	}
+
+	public JButton getBtnConfirmar2() {
+		return btnConfirmar2;
+	}
+
+	public void setBtnConfirmar2(JButton btnConfirmar2) {
+		this.btnConfirmar2 = btnConfirmar2;
+	}
+
+	public JButton getBtnConfirmar3() {
+		return btnConfirmar3;
+	}
+
+	public void setBtnConfirmar3(JButton btnConfirmar3) {
+		this.btnConfirmar3 = btnConfirmar3;
+	}
+	
 	
 	
 }
