@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 
 public class MenuVista extends JFrame {
 
-	private JButton btnIngresarVehiculo, btnEliminarVehiculo, btnMostrarVehiculo, btnPrueba;
+	private JButton btnIngresarVehiculo, btnEliminarVehiculo, btnMostrarVehiculo;
 	private JLabel fondoInicio;
 	private Sonido sound;
 	private PanelAñadir pa;
@@ -33,7 +33,7 @@ public class MenuVista extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
-//		playMusica(0);
+		//playMusica(0);
 		
 		fondoInicio = new JLabel();
 		fondoInicio.setBounds(0, 0, 1005, 646);
@@ -66,17 +66,10 @@ public class MenuVista extends JFrame {
 		btnMostrarVehiculo.setIcon(null);
 		btnMostrarVehiculo.setFocusable(false);
 		
-		btnPrueba = new JButton("prueba");		
-		btnPrueba.setBounds(800, 135, 200, 50);
-		btnPrueba.setOpaque(false);
-		btnPrueba.setBorderPainted(false);
-		btnPrueba.setBackground(Color.red);
-		btnPrueba.setForeground(Color.black);
-		btnPrueba.setIcon(null);
-		btnPrueba.setFocusable(false);
 		
 		
-		add(btnPrueba);
+		
+		
 		
 		add(pe);
 		add(pm);
@@ -164,16 +157,7 @@ public class MenuVista extends JFrame {
 
 
 
-	public JButton getBtnPrueba() {
-		return btnPrueba;
-	}
-
-
-
-	public void setBtnPrueba(JButton btnPrueba) {
-		this.btnPrueba = btnPrueba;
-	}
-
+	
 
 
 	public void setupGame() {
