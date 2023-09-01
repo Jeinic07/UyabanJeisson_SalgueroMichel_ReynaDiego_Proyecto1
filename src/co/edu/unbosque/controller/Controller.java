@@ -100,10 +100,13 @@ public class Controller implements ActionListener {
 			break;
 		}
 		case "Borrar": {
+			
+		
 
 			int pos = Integer.parseInt(mv.getPe().getIngreseNdeEliminar().getText());
-
-			System.out.println(pos);
+			v.eliminar(pos);
+//
+//			System.out.println(pos);
 			break;
 		}
 
