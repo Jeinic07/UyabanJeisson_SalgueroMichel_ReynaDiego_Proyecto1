@@ -11,6 +11,7 @@ import co.edu.unbosque.model.VehiculoDTO;
 import co.edu.unbosque.persistance.Serializacion;
 import co.edu.unbosque.util.MyLinkedList;
 import co.edu.unbosque.view.MenuVista;
+import co.edu.unbosque.view.PanelAñadir;
 import co.edu.unbosque.view.PanelPrincipal;
 
 public class Controller implements ActionListener {
@@ -20,6 +21,7 @@ public class Controller implements ActionListener {
 	private Scanner sc;
 	private Serializacion s;
 	private MenuVista mv;
+	private PanelAñadir pa;
 	
 	
 	public Controller() {
@@ -27,7 +29,7 @@ public class Controller implements ActionListener {
 		v = new VehiculoDAO();
 		mv = new MenuVista();
 		sc = new Scanner(System.in);
-
+		pa = new PanelAñadir();
 		agregarLectores();
 	}
 
@@ -41,19 +43,32 @@ public class Controller implements ActionListener {
 
 		mv.getBtnIngresarVehiculo().addActionListener(this);
 		mv.getBtnIngresarVehiculo().setActionCommand("Ingresar");
+		
+		pa.getBtnAgregrar().addActionListener(this);
+		pa.getBtnAgregrar().setActionCommand("Agregar");
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
-		case "Ingresar": {
+		case "Ingresar": 
 			
 			mv.getPa().setVisible(true);
 			mv.getPm().setVisible(false);
 			mv.getPe().setVisible(false);
-
-			break;
-		}
+			
+			case "Agregar":{ 
+				String placa = pa.getIngreseNdePlaca().getText();
+				String tipo = pa.getIngreseTipo().getText();
+				String hEntrada = pa.getIngreseHora().getText();
+				
+				v.ingresar(tipo, placa, hEntrada);
+				break;
+			}
+			
+		
+			
+		
 		case "Mostrar": {
 			mv.getPa().setVisible(false);
 			mv.getPm().setVisible(true);
