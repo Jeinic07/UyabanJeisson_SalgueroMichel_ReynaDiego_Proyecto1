@@ -15,12 +15,16 @@ public class MenuVista extends JFrame {
 	private JLabel fondoInicio;
 	private Sonido sound;
 	private PanelAñadir pa;
+	private PanelEliminar pe;
+	private PanelMostrar pm;
 
 	
 	public MenuVista() {
 		
 		sound = new Sonido();
 		pa = new PanelAñadir();
+		pe = new PanelEliminar();
+		pm = new PanelMostrar();
 		
 		setTitle("Parqueadero Titán");
 		setBounds(0, 0, 1005, 646);
@@ -63,7 +67,8 @@ public class MenuVista extends JFrame {
 		btnMostrarVehiculo.setFocusable(false);
 		
 		
-		
+		add(pe);
+		add(pm);
 		add(pa);
 		add(btnMostrarVehiculo);
 		add(btnEliminarVehiculo);
@@ -122,9 +127,30 @@ public class MenuVista extends JFrame {
 	public void setPa(PanelAñadir pa) {
 		this.pa = pa;
 	}
+	
+	public PanelEliminar getPe() {
+		return pe;
+	}
 
-	
-	
+
+
+	public void setPe(PanelEliminar pe) {
+		this.pe = pe;
+	}
+
+
+
+	public PanelMostrar getPm() {
+		return pm;
+	}
+
+
+
+	public void setPm(PanelMostrar pm) {
+		this.pm = pm;
+	}
+
+
 
 	public void setupGame() {
 		playMusica(0);
