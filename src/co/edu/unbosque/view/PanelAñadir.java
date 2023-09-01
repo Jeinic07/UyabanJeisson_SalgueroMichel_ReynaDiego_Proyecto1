@@ -12,7 +12,7 @@ public class PanelAñadir extends JPanel {
 
 	private JLabel texto, textoPlaca, textoHora, textoTipo;
 	private JTextField ingreseNdePlaca, ingreseTipo, ingreseHora;
-	private JButton btnAgregar, btnConfirmar1, btnConfirmar2, btnConfirmar3;
+	private JButton btnAgregar, btnConfirmar1;
 	
 	public PanelAñadir() {
 		
@@ -63,18 +63,14 @@ public class PanelAñadir extends JPanel {
 		btnAgregar.setIcon(null);
 		
 		btnConfirmar1 = new JButton("confirmar");
-		btnConfirmar1.setBounds(511, 35, 140, 32);
+		btnConfirmar1.setBounds(511, 35, 127, 32);
 		btnConfirmar1.setOpaque(false);
 		btnConfirmar1.setBorderPainted(false);
-		btnConfirmar1.setFont(new Font("Times New Roman", Font.TRUETYPE_FONT, 18));
+		btnConfirmar1.setFont(new Font("Times New Roman", Font.TRUETYPE_FONT, 14));
 		btnConfirmar1.setBackground(Color.LIGHT_GRAY);
 		btnConfirmar1.setForeground(Color.DARK_GRAY);
 		btnConfirmar1.setIcon(null);
 		
-		
-		texto = new JLabel();
-		texto.setText("Añadir");
-		texto.setBounds(365, 136, 343, 32);
 		
 		add(btnConfirmar1);
 		add(btnAgregar);
@@ -84,7 +80,7 @@ public class PanelAñadir extends JPanel {
 		add(ingreseTipo);
 		add(textoPlaca);
 		add(ingreseNdePlaca);
-		add(texto);
+		
 		
 		setVisible(false);
 	}
@@ -161,21 +157,7 @@ public class PanelAñadir extends JPanel {
 		this.btnConfirmar1 = btnConfirmar1;
 	}
 
-	public JButton getBtnConfirmar2() {
-		return btnConfirmar2;
-	}
-
-	public void setBtnConfirmar2(JButton btnConfirmar2) {
-		this.btnConfirmar2 = btnConfirmar2;
-	}
-
-	public JButton getBtnConfirmar3() {
-		return btnConfirmar3;
-	}
-
-	public void setBtnConfirmar3(JButton btnConfirmar3) {
-		this.btnConfirmar3 = btnConfirmar3;
-	}
+	
 	
 	
 	
