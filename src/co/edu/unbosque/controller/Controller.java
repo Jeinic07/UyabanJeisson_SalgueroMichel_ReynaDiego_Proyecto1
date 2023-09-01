@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 import java.io.Serializable;
 import java.util.Scanner;
 
-import co.edu.unbosque.model.MyLinkedList;
 import co.edu.unbosque.model.VehiculoDAO;
 import co.edu.unbosque.model.VehiculoDTO;
 import co.edu.unbosque.persistance.Serializacion;
+import co.edu.unbosque.util.MyLinkedList;
 import co.edu.unbosque.view.MenuVista;
 import co.edu.unbosque.view.PanelPrincipal;
 
@@ -32,34 +32,34 @@ public class Controller implements ActionListener {
 
 	private void agregarLectores() {
 
-		mv.getPp().getBtnMostrarVehiculo().addActionListener(this);
-		mv.getPp().getBtnMostrarVehiculo().setActionCommand("Mostrar");
+		mv.getBtnMostrarVehiculo().addActionListener(this);
+		mv.getBtnMostrarVehiculo().setActionCommand("Mostrar");
 
-		mv.getPp().getBtnEliminarVehiculo().addActionListener(this);
-		mv.getPp().getBtnEliminarVehiculo().setActionCommand("Eliminar");
+		mv.getBtnEliminarVehiculo().addActionListener(this);
+		mv.getBtnEliminarVehiculo().setActionCommand("Eliminar");
 
-		mv.getPp().getBtnIngresarVehiculo().addActionListener(this);
-		mv.getPp().getBtnIngresarVehiculo().setActionCommand("Ingresar");
+		mv.getBtnIngresarVehiculo().addActionListener(this);
+		mv.getBtnIngresarVehiculo().setActionCommand("Ingresar");
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
-		case "Agregar": {
+		case "Ingresar": {
 			
-			mv.getPp().getPa().setVisible(true);
+			mv.getPa().setVisible(true);
 
 			break;
 		}
 		case "Mostrar": {
-			mv.getPp().getPa().setVisible(false);
+			mv.getPa().setVisible(false);
 
 			
 
 			break;
 		}
-		case "Borrar": {
-			mv.getPp().getPa().setVisible(false);
+		case "Eliminar": {
+			mv. getPa().setVisible(false);
 
 			break;
 		}

@@ -3,12 +3,14 @@ package co.edu.unbosque.model;
 import java.io.Serializable;
 
 import co.edu.unbosque.persistance.Serializacion;
+import co.edu.unbosque.util.MyLinkedList;
 
 public class VehiculoDAO implements OperacionesDAO {
 
 	private MyLinkedList<VehiculoDTO> vehiculos;
 
 	public VehiculoDAO() {
+		
 		try {
 			vehiculos = (MyLinkedList<VehiculoDTO>) Serializacion.readSerializable("Vehiculo.txt");
 		} catch (Exception e) {
@@ -66,7 +68,7 @@ public class VehiculoDAO implements OperacionesDAO {
 
 	}
 
-//	@Override
+	@Override
 //	public String mostrarTodo() {
 //		String salida = "";
 //		StringBuilder sb = new StringBuilder();

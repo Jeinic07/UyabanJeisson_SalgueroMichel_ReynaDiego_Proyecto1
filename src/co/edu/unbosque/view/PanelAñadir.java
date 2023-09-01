@@ -6,10 +6,12 @@ public class PanelAñadir extends JPanel {
 
 	public PanelAñadir() {
 		
-		this.setBounds(133, 236, 752, 309);
-		this.setLayout(null);
+		setBounds(133, 236, 752, 309);
+		setLayout(null);
 		
-		this.setVisible(false);
+		setVisible(false);
+		
+		
 	
 	}
 	
