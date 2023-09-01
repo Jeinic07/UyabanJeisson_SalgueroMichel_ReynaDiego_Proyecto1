@@ -115,7 +115,12 @@ public class Controller implements ActionListener {
 					break ciclo2;
 				}
 				case 2: {
-
+					
+					System.out.println("Ingrese la poscicion del vehiculo que desa borrar");
+					int pos = sc.nextInt();
+					
+					System.out.println(v.eliminar(pos));
+					
 					break ciclo2;
 
 				}

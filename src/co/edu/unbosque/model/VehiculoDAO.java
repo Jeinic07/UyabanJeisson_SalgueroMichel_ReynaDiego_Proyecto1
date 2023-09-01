@@ -46,10 +46,18 @@ public class VehiculoDAO implements OperacionesDAO {
 	}
 
 	@Override
-	public String eliminar(String placa) {
+	public String eliminar(int pos) {
+		String salida = "";
+		try {
+			vehiculos.remove(pos);
+			salida = "Vehiculo eliminado correctamente";
+			
+		} catch (Exception e) {
+			salida = "Ha ocurrido un error, intente nuevamente.";
+		}
 		
 		
-		return null;
+		return salida;
 	}
 
 	@Override
