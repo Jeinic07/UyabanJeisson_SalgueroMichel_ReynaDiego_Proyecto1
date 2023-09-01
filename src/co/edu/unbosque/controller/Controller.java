@@ -17,14 +17,13 @@ import co.edu.unbosque.view.PanelPrincipal;
 public class Controller implements ActionListener {
 
 	private VehiculoDAO v;
-	private VehiculoDTO vdto;
 	private Scanner sc;
 	private Serializacion s;
 	private MenuVista mv;
 	private PanelAñadir pa;
 
 	public Controller() {
-		vdto = new VehiculoDTO();
+		
 		v = new VehiculoDAO();
 		mv = new MenuVista();
 		sc = new Scanner(System.in);
@@ -42,41 +41,55 @@ public class Controller implements ActionListener {
 
 		mv.getBtnIngresarVehiculo().addActionListener(this);
 		mv.getBtnIngresarVehiculo().setActionCommand("Ingresar");
+		
+		mv.getPa().getBtnAgregar().addActionListener(this);
+		mv.getPa().getBtnAgregar().setActionCommand("Agregar");
+		
+		mv.getBtnPrueba().addActionListener(this);
+		mv.getBtnPrueba().setActionCommand("Prueba");
+		
+		mv.getPa().getBtnConfirmar1().addActionListener(this);
+		mv.getPa().getBtnConfirmar1().setActionCommand("Confirmar1");
 
-		pa.getBtnAgregar().addActionListener(this);
-		pa.getBtnAgregar().setActionCommand("Agregar");
-
-		pa.getBtnConfirmar1().addActionListener(this);
-		pa.getBtnConfirmar1().setActionCommand("Confirmar1");
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
 		case "Ingresar": {
-
+			
+			
 			mv.getPa().setVisible(true);
 			mv.getPm().setVisible(false);
 			mv.getPe().setVisible(false);
 			break;
-		}
-		case "Confirmar1": {
+		} 
+		case "Confirmar1":{
+			
 			
 			break;
 		}
-
-		case "Agregar": {
-			String placa = pa.getIngreseNdePlaca().getText();
-			String tipo = pa.getIngreseTipo().getText();
-			String hEntrada = pa.getIngreseHora().getText();
-
-			v.ingresar(tipo, placa, hEntrada);
+		
+		case "Prueba":{
+			System.out.println("hpta");
 			break;
 		}
+		case "Agregar":{
+			
+		
+			String tipo = pa.getIngreseTipo().getText();
+			pa.getIngreseTipo().setText(tipo);		
+			
+			String placa = pa.getIngreseNdePlaca().getText();
+			System.out.println("tipo"+ tipo);
+			break;
+		}
+
 
 		case "Mostrar": {
 			mv.getPa().setVisible(false);
 			mv.getPm().setVisible(true);
 			mv.getPe().setVisible(false);
+			
 
 			break;
 		}
