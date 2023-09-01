@@ -58,7 +58,7 @@ public class VehiculoDTO implements Serializable{
 
 	@Override
 	public String toString() {
-		return "VehiculoDTO [tipo=" + tipo + ", placa=" + placa + ", horaEntrada=" + horaEntrada + "]";
+		return  tipo + "; " + placa + "; " + horaEntrada;
 	}
 	
 	

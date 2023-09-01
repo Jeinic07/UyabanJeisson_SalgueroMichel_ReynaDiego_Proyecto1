@@ -78,22 +78,28 @@ public class VehiculoDAO implements OperacionesDAO {
 	}
 
 	@Override
-//	public String mostrarTodo() {
-//		String salida = "";
-//		StringBuilder sb = new StringBuilder();
-//
-//		for (int i = 0; i < vehiculos.size(); i++) {
-//
-//			salida += vehiculos.toString();
-//
-//		}
-//		return salida;
-//
-//	}
+	public String[] mostrarTodo() {
+		
+		String[] salida = new String[100];
+		StringBuilder sb = new StringBuilder();
+		int count = 0;
 
-	public String mostrarTodo() {
+		for (int i = 0; i < vehiculos.size(); i++) {
 
-		return vehiculos.toString();
+			salida[i] = "posición " + count + "; "+ vehiculos.get(i).getInfo();
+			count++;
+		}
+
+		return salida;
 
 	}
+	
+	
+
+//
+//	public String mostrarTodo() {
+//		
+//		return vehiculos.toString();
+//
+//	}
 }

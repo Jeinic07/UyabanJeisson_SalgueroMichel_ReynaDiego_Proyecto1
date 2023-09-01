@@ -12,6 +12,7 @@ import co.edu.unbosque.persistance.Serializacion;
 import co.edu.unbosque.util.MyLinkedList;
 import co.edu.unbosque.view.MenuVista;
 import co.edu.unbosque.view.PanelAñadir;
+import co.edu.unbosque.view.PanelEliminar;
 import co.edu.unbosque.view.PanelPrincipal;
 
 public class Controller implements ActionListener {
@@ -21,9 +22,10 @@ public class Controller implements ActionListener {
 	private Serializacion s;
 	private MenuVista mv;
 	private PanelAñadir pa;
+	private PanelEliminar pe;
 
 	public Controller() {
-		
+
 		v = new VehiculoDAO();
 		mv = new MenuVista();
 		sc = new Scanner(System.in);
@@ -41,49 +43,52 @@ public class Controller implements ActionListener {
 
 		mv.getBtnIngresarVehiculo().addActionListener(this);
 		mv.getBtnIngresarVehiculo().setActionCommand("Ingresar");
-		
+
 		mv.getPa().getBtnAgregar().addActionListener(this);
 		mv.getPa().getBtnAgregar().setActionCommand("Agregar");
 		
-		mv.getBtnPrueba().addActionListener(this);
-		mv.getBtnPrueba().setActionCommand("Prueba");
+		mv.getPe().getBtnEliminar().addActionListener(this);
+		mv.getPe().getBtnEliminar().setActionCommand("Borrar");
 		
+
+		;
 
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		switch (e.getActionCommand()) {
 		case "Ingresar": {
-			
-			
+
 			mv.getPa().setVisible(true);
 			mv.getPm().setVisible(false);
 			mv.getPe().setVisible(false);
 			break;
-		} 
-	
-		case "Prueba":{
-			System.out.println("hpta");
-			break;
 		}
-		case "Agregar":{
-			
-		
-			String tipo = mv.getPa().getIngreseTipo().getText();	
+
+		case "Agregar": {
+
+			String tipo = mv.getPa().getIngreseTipo().getText();
 			String placa = mv.getPa().getIngreseNdePlaca().getText();
 			String hEntrada = mv.getPa().getIngreseHora().getText();
-			
-			System.out.println(v.ingresar(tipo, placa, hEntrada)); 
-			
+
+			System.out.println(v.ingresar(tipo, placa, hEntrada));
+
 			break;
 		}
 
-
 		case "Mostrar": {
+			mv.getPm().vaciarModelo();
+			
+			for (int i = 0; i < v.getVehiculos().size(); i++) {
+				String[] pos = v.mostrarTodo();
+				
+				mv.getPm().llenarModelo(pos[i]);
+			
+			}
+
 			mv.getPa().setVisible(false);
 			mv.getPm().setVisible(true);
 			mv.getPe().setVisible(false);
-			
 
 			break;
 		}
@@ -92,6 +97,13 @@ public class Controller implements ActionListener {
 			mv.getPm().setVisible(false);
 			mv.getPe().setVisible(true);
 
+			break;
+		}
+		case "Borrar": {
+
+			int pos = Integer.parseInt(mv.getPe().getIngreseNdeEliminar().getText());
+
+			System.out.println(pos);
 			break;
 		}
 

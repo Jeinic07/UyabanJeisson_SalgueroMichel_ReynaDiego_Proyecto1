@@ -8,7 +8,7 @@ public interface OperacionesDAO {
 	
 	public String mostrarVehiculo(String placa);
 	
-	public String mostrarTodo();
+	public String[] mostrarTodo();
 
 
 }
