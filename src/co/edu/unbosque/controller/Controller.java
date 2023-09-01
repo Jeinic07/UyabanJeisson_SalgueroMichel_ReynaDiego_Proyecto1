@@ -20,7 +20,8 @@ public class Controller implements ActionListener {
 	private Scanner sc;
 	private Serializacion s;
 	private MenuVista mv;
-
+	
+	
 	public Controller() {
 		vdto = new VehiculoDTO();
 		v = new VehiculoDAO();
@@ -48,19 +49,23 @@ public class Controller implements ActionListener {
 		case "Ingresar": {
 			
 			mv.getPa().setVisible(true);
+			mv.getPm().setVisible(false);
+			mv.getPe().setVisible(false);
 
 			break;
 		}
 		case "Mostrar": {
 			mv.getPa().setVisible(false);
-
-			
+			mv.getPm().setVisible(true);
+			mv.getPe().setVisible(false);
 
 			break;
 		}
 		case "Eliminar": {
-			mv. getPa().setVisible(false);
-
+			mv.getPa().setVisible(false);
+			mv.getPm().setVisible(false);
+			mv.getPe().setVisible(true);
+			
 			break;
 		}
 
